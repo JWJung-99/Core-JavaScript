@@ -1,3 +1,7 @@
-const a = 10;
 
-console.log("안녕 자바스크립트");
+
+
+
+// alert('안 돼!');
+// confirm('정말 지울거야?');
+//prompt('이름이 뭐니?');

@@ -10,4 +10,10 @@
 
 ### Basic
 
-- [ ] Core Structure [바로가기](https://www.naver.com)
+- [x] Code Structure [바로가기]()
+- [x] Variable [바로가기]()
+- [x] Strict Mode [바로가기]()
+- [x] Global This [바로가기]()
+- [ ] Legacy Var [바로가기]()
+- [ ] Data Types [바로가기]()
+- [ ] Type Conversion [바로가기]()
