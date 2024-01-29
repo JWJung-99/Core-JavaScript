@@ -143,7 +143,7 @@ movePage(
   function (){
     console.error('잘못된 url 정보를 입력하셨습니다.');
   }
-)
+);
 
 
 // 함수 선언문 vs. 함수 (표현)식
@@ -151,4 +151,69 @@ movePage(
 
 // 즉시 실행 함수 (표현)식
 // Immediately Invoked Function Expression
-let IIFE;
+
+// 캡슐화 (encapsulation)
+// 함수가 선언됨과 동시에 실행되는 것을 말합니다.
+
+
+// rename 가능 => closure
+// import, export => module 프로그래밍
+
+// let IIFE;
+
+const MASTER = (function(){
+  let uuid = 'adkjfklsajfk1jkjkjsd';
+
+  return {
+    getKey() {
+      return uuid;
+    },
+    setKey(value) {
+      uuid = value;
+    }
+  }
+
+})();
+
+console.log(MASTER.getKey());
+console.log(MASTER.setKey('dkfjdkfjdk'));
+console.log(MASTER.getKey());
+
+
+// const css = (function(){
+  
+//   function getStyle(node,prop){
+
+//     if(typeof node === 'string'){
+//       node = document.querySelector(node)
+//     }
+//     if(typeof prop !== 'string'){
+//       throw new Error('getStyle 함수의 두 번째 인수는 문자 타입 이어야 합니다.');
+//     }
+//     return getComputedStyle(node)[prop]
+//   }
+ 
+//   function setStyle(node,prop,value){
+  
+//     if(typeof node === 'string') node = document.querySelector(node);
+  
+//     if(typeof prop !== 'string'){
+//       throw new Error('setStyle 함수의 두 번째 인수는 문자 타입 이어야 합니다.');
+//     }
+  
+//     if(!value) throw new Error('setStyle 함수의 세 번째 인수는 필수 입력값 입니다.');
+  
+//     node.style[prop] = value
+//   }
+  
+//   function css(node,prop,value){
+
+//     return (!value) ? getStyle(node,prop) : setStyle(node,prop,value)
+    
+    
+//   }
+  
+
+//   return css;
+
+// })()

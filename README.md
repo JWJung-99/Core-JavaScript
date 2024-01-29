@@ -29,6 +29,6 @@
 - [x] Loop - 4 [바로가기](https://github.com/JWJung-99/Core-JavaScript/blob/01.core/client/chapter/core/10-4.loop.js)
 - [x] Loop - 5 [바로가기](https://github.com/JWJung-99/Core-JavaScript/blob/01.core/client/chapter/core/10-5.loop.js)
 - [x] Function - 1 [바로가기](https://github.com/JWJung-99/Core-JavaScript/blob/01.core/client/chapter/core/11-1.function.js)
-- [] Function - 2 [바로가기](https://github.com/JWJung-99/Core-JavaScript/blob/01.core/client/chapter/core/11-2.function.js)
+- [x] Function - 2 [바로가기](https://github.com/JWJung-99/Core-JavaScript/blob/01.core/client/chapter/core/11-2.function.js)
 - [] Function - 3 [바로가기](https://github.com/JWJung-99/Core-JavaScript/blob/01.core/client/chapter/core/11-3.function.js)
 - [] Function - 4 [바로가기](https://github.com/JWJung-99/Core-JavaScript/blob/01.core/client/chapter/core/11-4.function.js)
