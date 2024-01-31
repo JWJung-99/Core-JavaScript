@@ -52,17 +52,6 @@ createUser('정진욱', 25);
 
 // 화살표 함수와 this
 
-
-/* 다음 함수를 작성해봅니다. -------------------------------------------------- */
-
-// pow(numeric: number, powerCount: number): number;
-let pow; 
-
-// repeat(text: string, repeatCount: number): string;
-let repeat; 
-
-
-
 // 자바스크립트 함수는 양면의 얼굴 (일반함수 / 생성자 함수)
 
 const user = {
@@ -83,3 +72,45 @@ const user = {
     sayHi();
   }
 }
+
+
+/* 다음 함수를 작성해봅니다. -------------------------------------------------- */
+
+// pow(numeric: number, powerCount: number): number;
+let pow = (numeric, powerCount) => {
+  let result = 1;
+
+  for (let i = 0; i < powerCount; i++) {
+    result *= numeric;
+  }
+
+  return result;
+};
+
+const powResult = pow(2, 10);
+console.log(powResult);
+
+
+
+let powExpression = (numeric, powCount) => Array(powCount).fill(null).reduce(acc => acc * numeric, 1);
+
+console.log(powExpression(2, 10));
+
+
+
+// repeat(text: string, repeatCount: number): string;
+let repeat = (text, repeatCount) => {
+  let result = '';
+  for (let i = 0; i < repeatCount; i++) { 
+    result += text;
+  }
+
+  return result;
+};
+
+console.log(repeat('hello', 3)); //'hellohellohello'
+
+
+let repeatExpression = (text, repeatCount) => Array(repeatCount).fill(null).reduce(acc => acc += text, '');
+
+console.log(repeatExpression('범쌤🐯', 5));
