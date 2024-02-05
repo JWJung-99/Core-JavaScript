@@ -5,6 +5,17 @@ module.exports = {
     node: true,
   },
   extends: "eslint:recommended",
+  globals: {
+    css: true,
+    attr: true,
+    getNode: true,
+    getNodes: true,
+    gsap: true,
+    // insertBefore: true,
+    // insertFirst: true,
+    insertLast: true,
+    // insertAfter: true,
+  },
   overrides: [],
   parserOptions: {
     ecmaVersion: "latest",
