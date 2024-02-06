@@ -6,6 +6,9 @@ module.exports = {
   },
   extends: "eslint:recommended",
   globals: {
+    addClass: true,
+    removeClass: true,
+    toggleClass: true,
     css: true,
     attr: true,
     getNode: true,

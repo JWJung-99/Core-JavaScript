@@ -20,6 +20,8 @@ console.log(first.classList.contains('hello'));
 
 
 
+
+
 /* 스타일 변경 방법 --------------------------------------------------------- */
 
 // - style.cssText - "style" 속성 전체에 대응하므로 스타일 전체에 대한 문자열 저장
@@ -32,9 +34,6 @@ console.log(first.classList.contains('hello'));
 
 first.style.background = 'orange'; // setter
 console.log(getComputedStyle(first)['backgroundColor']); // getter
-
-
-
 
 css(first, 'background');
 
