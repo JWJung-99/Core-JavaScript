@@ -16,10 +16,10 @@ function handler() {
 }
 
 // first.onclick = handler;
+bindEvent('.first', 'click', handler);
 
-// const remove = bindEvent('.first', 'click', handler);
-
-// getNode('.deleteEvent').addEventListener('click', remove);
+const remove = bindEvent('.first', 'click', handler);
+getNode('.deleteEvent').addEventListener('click', remove);
 
 
 // 3. 메서드 : element.addEventListener(event, handler[, phase])
@@ -76,8 +76,7 @@ function handle(e) {
   console.log(this, e);
 }
                                               // ground의 이벤트
-// ground.addEventListener('mousemove', debounce(handle);
-
+// ground.addEventListener('mousemove', debounce(handle));
 
 
 
