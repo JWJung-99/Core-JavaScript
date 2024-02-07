@@ -5,6 +5,9 @@ module.exports = {
     node: true,
   },
   extends: "eslint:recommended",
+  globals: {
+    
+  },
   overrides: [],
   parserOptions: {
     ecmaVersion: "latest",
