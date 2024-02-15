@@ -1,3 +1,14 @@
-const a = 10;
 
-console.log("안녕 자바스크립트");
+import { xhr } from './lib/index.js';
+
+
+// xhr.post(
+//   'https://jsonplaceholder.typicode.com/users',
+//   {name: 'tiger', age: 40},
+//   (data) => {
+//     console.log(data);
+//   },
+//   () => {}
+// )
+
+
