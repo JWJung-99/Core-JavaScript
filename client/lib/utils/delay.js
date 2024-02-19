@@ -2,6 +2,10 @@
 
 import { getNode } from "../dom/getNode.js";
 import { isNumber, isObject } from "./typeOf.js";
+import { getRandomMinMax } from "../math/getRandomMinMax.js";
+import { xhrPromise } from "./xhr.js";
+import { insertLast } from "../dom/insert.js";
+import { tiger } from "./tiger.js";
 
 
 const first = getNode('.first');
@@ -43,7 +47,7 @@ const defaultOptions = {
 }
 
 
-function delayP(options) {
+export function delayP(options) {
 
   let config = {...defaultOptions};
 
@@ -73,34 +77,34 @@ function delayP(options) {
 }
 
 
-delayP(1000)
-.then(
-  (res) => {
-    first.style.top = '-100px';
-    second.style.top = '100px';
+// delayP(1000)
+// .then(
+//   (res) => {
+//     first.style.top = '-100px';
+//     second.style.top = '100px';
 
-    return delayP(1000);
-  }
-)
-.then(
-  (res) => {
-    first.style.transform = 'rotate(360deg)';
-    second.style.transform = 'rotate(-360deg)';
+//     return delayP(1000);
+//   }
+// )
+// .then(
+//   (res) => {
+//     first.style.transform = 'rotate(360deg)';
+//     second.style.transform = 'rotate(-360deg)';
 
-    return delayP(1000);
-  }
-)
-.then(
-  (res) => {
-    first.style.top = '0';
-    second.style.top = '0';
+//     return delayP(1000);
+//   }
+// )
+// .then(
+//   (res) => {
+//     first.style.top = '0';
+//     second.style.top = '0';
 
-    return delayP(1000);
-  }
-)
-.catch((err) => {
-  console.log(err);
-})
+//     return delayP(1000);
+//   }
+// )
+// .catch((err) => {
+//   console.log(err);
+// })
 
 
 
@@ -109,4 +113,117 @@ delayP(1000)
 // })
 
 
-// console.log(promise);
+
+
+
+// Promise => 코드 간에 믿음이 생기기 때문에 안전하게 처리 가능
+
+
+// async : 함수의 리턴값을 무조건 Promise<object>
+
+async function delayA(data) {
+
+
+  return data;
+}
+
+// delayA('신재훈').then(console.log);
+
+// top-level-await (async 함수 밖에서 await 사용)
+const result = await delayA('신재훈');
+// console.log(result);
+
+
+
+// IIAFE
+// (async () => {
+//   async function delayA(data) {
+
+
+//     return data;
+//   }
+
+//   const result = await delayA('신재훈');
+//   console.log(result);
+// })()
+
+
+/* callback */
+// function 라면끓이기() {
+  
+//   delay(() => {
+//     console.log('물');
+
+//     delay(() => {
+//       console.log('스프');
+
+//       delay(() => {
+//         console.log('면');
+
+//         delay(() => {
+//           console.log('그릇');
+//         })
+//       })
+//     })
+//   })
+  
+// }
+
+/* promise */
+// function 라면끓이기() {
+  
+//   delayP()
+//   .then(() => {
+//     console.log('물');
+//     return delayP();
+//   })
+//   .then(() => {
+//     console.log('스프');
+//     return delayP();
+//   })
+//   .then(() => {
+//     console.log('면');
+//     return delayP();
+//   })
+//   .then(() => {
+//     console.log('그릇');
+//     return delayP();
+//   })
+  
+// }
+
+
+/* async */
+async function 라면끓이기() {
+
+  console.log('물');
+  await delayP();
+
+  console.log('스프');
+  await delayP();
+
+  console.log('면');
+  await delayP();
+
+  console.log('그릇');
+  await delayP();
+}
+
+// 라면끓이기();
+
+
+
+
+
+
+async function getData() {
+
+  const response = await tiger.get(`https://pokeapi.co/api/v2/pokemon/${getRandomMinMax(0,100)}`);
+
+  const imgSrc = response.data.sprites.other.showdown['front_default'];
+
+  insertLast('h1', `<img src="${imgSrc}" alt="" />`)
+
+}
+
+// getData();
